@@ -1,0 +1,80 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pills-books-tab" data-bs-toggle="tab" data-bs-target="#pills-books" type="button" role="tab" aria-controls="pills-books" aria-selected="true">Books</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-audit-tab" data-bs-toggle="tab" data-bs-target="#pills-audit" type="button" role="tab" aria-controls="pills-audit" aria-selected="false">Audit</button>
+    </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-books" role="tabpanel" aria-labelledby="pills-books-tab">
+        <table class="table table-striped caption-top" id="booksTable">
+            <caption>List of books</caption>
+            <thead>
+            <tr>
+                <th scope="col">Author</th>
+                <th scope="col">Title</th>
+                <th scope="col">Link</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <button id="myBtn" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary">Add new</button>
+    </div>
+    <div class="tab-pane fade" id="pills-audit" role="tabpanel" aria-labelledby="pills-audit-tab">
+        <table class="table table-striped caption-top" id="auditTable">
+            <caption>Audit records</caption>
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Timestamp</th>
+                <th scope="col">Name</th>
+                <th scope="col">Url</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form class="form-horizontal" id="form">
+                    <fieldset>
+
+                        <div class="mb-3">
+                            <label for="author" class="form-label">Author</label>
+                            <input type="text" class="form-control" id="author" placeholder="Book author">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="title" placeholder="Book title">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Book file</label>
+                            <input class="form-control" type="file" id="formFile" accept=".pdf">
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" id="addBookBtn" class="btn btn-primary">Add</button>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
