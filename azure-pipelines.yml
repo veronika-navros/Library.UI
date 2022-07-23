@@ -1,0 +1,37 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: DotNetCoreCLI@2
+  displayName: 'Build'
+  inputs:
+    command: 'build'
+    projects: '$(solution)'
+- task: DotNetCoreCLI@2
+  displayName: 'Publish application'
+  inputs:
+    command: 'publish'
+    projects: '$(solution)'
+    arguments: '--output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: true
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish application in artifacts'
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: 'library-api'
+- task: AzureRmWebAppDeployment@4
+  displayName: 'Deploy'
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'CloudOps SandBox (64e8b0c5-e7ed-450d-a62d-8dd37014c788)'
+    appType: 'webApp'
+    WebAppName: 'veron-library-ui'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/*.zip'
