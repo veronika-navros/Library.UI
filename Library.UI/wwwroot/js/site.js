@@ -4,7 +4,7 @@
 var token;
 document.addEventListener("DOMContentLoaded", function(event) {
     // import all the variables from the model
-    var $vars = $('#site\\.js').data();
+    var $vars = window.top.document.querySelectorAll('#site\\.js')[0].data();
 token= $vars.token;
     alert($vars.token);
 });
