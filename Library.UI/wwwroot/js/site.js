@@ -55,7 +55,7 @@ function fetchBooks() {
             const table = document.getElementById('booksTable');
 
             clearTable(table);
-console.log(data);
+
             for (const user of data) {
                 let row = table.insertRow(-1);
                 let newCell = row.insertCell(0);
