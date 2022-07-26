@@ -2,7 +2,7 @@
 //const baseUrl = 'https://veron-library.azurewebsites.net';
 //const baseUrl = 'http://localhost:47078';
 var token;
-jQuery(document).ready(function ($) {
+document.addEventListener("DOMContentLoaded", function(event) {
     // import all the variables from the model
     var $vars = $('#site\\.js').data();
 token= $vars.token;
