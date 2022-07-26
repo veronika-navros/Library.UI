@@ -44,7 +44,7 @@ function fetchBooks() {
     fetch(baseUrl + '/api/book', {
         method: "GET",
         headers: {
-            "Authorization": "{{ env('AuthToken') }}"
+            "Authorization": process.env.AuthToken
         }
     })
         .then(response => response.json())
