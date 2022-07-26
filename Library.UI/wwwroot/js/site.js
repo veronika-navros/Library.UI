@@ -12,8 +12,10 @@ document.getElementById("addBookBtn").onclick = function(e) {
 
     fetch(baseUrl + '/api/book', {
         method: 'POST',
-        mode: 'no-cors',
-        body: formData
+        body: formData,
+        headers: {
+            "Authorization": token
+        }
     })
         .then(result => {
             fetchBooks();
@@ -77,7 +79,12 @@ console.log(data);
 }
 
 function fetchAudit() {
-    fetch(baseUrl + '/api/audit')
+    fetch(baseUrl + '/api/audit', {
+        method: "GET",
+        headers: {
+            "Authorization": token
+        }
+    })
         .then(response => response.json())
         .then(data => {
             const table = document.getElementById('auditTable');
