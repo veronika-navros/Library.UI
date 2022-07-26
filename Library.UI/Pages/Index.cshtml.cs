@@ -12,6 +12,8 @@ public class IndexModel : PageModel
         _logger = logger;
     }
 
+    public string Token => Environment.GetEnvironmentVariable("AuthToken")!;
+
     public void OnGet()
     {
     }

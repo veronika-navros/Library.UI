@@ -1,5 +1,4 @@
 ﻿const baseUrl = "https://veron-api.azure-api.net"
-const token = process.env["AuthToken"];
 //const baseUrl = 'https://veron-library.azurewebsites.net';
 //const baseUrl = 'http://localhost:47078';
 
