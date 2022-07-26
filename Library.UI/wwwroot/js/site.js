@@ -41,7 +41,13 @@ auditTab.addEventListener('shown.bs.tab', function (event) {
 });
 
 function fetchBooks() {
-    fetch(baseUrl + '/api/book')
+    fetch(baseUrl + '/api/book', {
+        method: "GET",
+        mode: "no-cors",
+        headers: {
+            "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZXNzYWdlIjoiSldUIFJ1bGVzISIsImlhdCI6MTQ1OTQ0ODExOSwiZXhwIjoxNDU5NDU0NTE5fQ.-yIVBD5b73C75osbmwwshQNRC7frWUYrqaTjTpza2y4",
+        }
+    })
         .then(response => response.json())
         .then(data => {
             const table = document.getElementById('booksTable');
