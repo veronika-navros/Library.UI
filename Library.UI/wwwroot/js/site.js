@@ -1,4 +1,5 @@
-﻿const baseUrl = 'https://veron-library.azurewebsites.net';
+﻿const baseUrl = "https://veron-api.azure-api.net"
+//const baseUrl = 'https://veron-library.azurewebsites.net';
 //const baseUrl = 'http://localhost:47078';
 
 document.getElementById("addBookBtn").onclick = function(e) {
