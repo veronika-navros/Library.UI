@@ -42,7 +42,7 @@ auditTab.addEventListener('shown.bs.tab', function (event) {
 
 function fetchBooks() {
     fetch(baseUrl + '/api/book')
-        .then(response => {console.log(response); response.json();})
+        .then(response => response.json())
         .then(data => {
             const table = document.getElementById('booksTable');
 
