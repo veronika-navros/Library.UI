@@ -1,4 +1,5 @@
 ﻿const baseUrl = "https://veron-api.azure-api.net"
+const token = process.env["AuthToken"];
 //const baseUrl = 'https://veron-library.azurewebsites.net';
 //const baseUrl = 'http://localhost:47078';
 
@@ -46,7 +47,7 @@ function fetchBooks() {
     fetch(baseUrl + '/api/book', {
         method: "GET",
         headers: {
-            "Authorization": process.env["AuthToken"]
+            "Authorization": token
         }
     })
         .then(response => response.json())
