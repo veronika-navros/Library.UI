@@ -1,13 +1,6 @@
 ﻿const baseUrl = "https://veron-api.azure-api.net"
 //const baseUrl = 'https://veron-library.azurewebsites.net';
 //const baseUrl = 'http://localhost:47078';
-var token;
-document.addEventListener("DOMContentLoaded", function(event) {
-    // import all the variables from the model
-    var $vars = window.top.document.querySelectorAll('#site\\.js')[0].data();
-token= $vars.token;
-    alert($vars.token);
-});
 
 document.getElementById("addBookBtn").onclick = function(e) {
     const formData = new FormData();
