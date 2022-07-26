@@ -1,5 +1,5 @@
-﻿const baseUrl = "https://veron-api.azure-api.net"
-//const baseUrl = 'https://veron-library.azurewebsites.net';
+﻿//const baseUrl = "https://veron-api.azure-api.net"
+const baseUrl = 'https://veron-library.azurewebsites.net';
 //const baseUrl = 'http://localhost:47078';
 
 document.getElementById("addBookBtn").onclick = function(e) {
@@ -41,19 +41,13 @@ auditTab.addEventListener('shown.bs.tab', function (event) {
 });
 
 function fetchBooks() {
-    fetch(baseUrl + '/api/book', {
-        method: "GET",
-        mode: "no-cors",
-        headers: {
-            "Authorization": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZXNzYWdlIjoiSldUIFJ1bGVzISIsImlhdCI6MTQ1OTQ0ODExOSwiZXhwIjoxNDU5NDU0NTE5fQ.-yIVBD5b73C75osbmwwshQNRC7frWUYrqaTjTpza2y4",
-        }
-    })
-        .then(response => response.json())
+    fetch(baseUrl + '/api/book')
+        .then(response => {console.log(response); response.json();})
         .then(data => {
             const table = document.getElementById('booksTable');
 
             clearTable(table);
-
+console.log(data);
             for (const user of data) {
                 let row = table.insertRow(-1);
                 let newCell = row.insertCell(0);
