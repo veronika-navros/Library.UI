@@ -1,5 +1,5 @@
-﻿const baseUrl = "https://veron-api.azure-api.net"
-//const baseUrl = 'https://veron-library.azurewebsites.net';
+﻿//const baseUrl = "https://veron-api.azure-api.net"
+const baseUrl = 'https://veron-library.azurewebsites.net';
 //const baseUrl = 'http://localhost:47078';
 
 document.getElementById("addBookBtn").onclick = function(e) {
@@ -41,11 +41,7 @@ auditTab.addEventListener('shown.bs.tab', function (event) {
 });
 
 function fetchBooks() {
-    fetch(baseUrl + '/api/book', {
-        headers: {
-            "Authorization": "f6dc69a089844cf6b2019bae6d36fac8"
-        }
-    })
+    fetch(baseUrl + '/api/book')
         .then(response => response.json())
         .then(data => {
             const table = document.getElementById('booksTable');
