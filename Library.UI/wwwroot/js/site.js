@@ -41,6 +41,8 @@ auditTab.addEventListener('shown.bs.tab', function (event) {
 });
 
 function fetchBooks() {
+    console.log("process.env[\"AuthToken\"]: " + process.env["AuthToken"]);
+    console.log("process.env.AuthToken: " + process.env.AuthToken);
     fetch(baseUrl + '/api/book', {
         method: "GET",
         headers: {
