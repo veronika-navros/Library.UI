@@ -41,7 +41,11 @@ auditTab.addEventListener('shown.bs.tab', function (event) {
 });
 
 function fetchBooks() {
-    fetch(baseUrl + '/api/book')
+    fetch(baseUrl + '/api/book', {
+        headers: {
+            "Authorization": "f6dc69a089844cf6b2019bae6d36fac8"
+        }
+    })
         .then(response => response.json())
         .then(data => {
             const table = document.getElementById('booksTable');
