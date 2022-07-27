@@ -12,7 +12,7 @@ document.getElementById("addBookBtn").onclick = function(e) {
 
     fetch(baseUrl + '/api/book', {
         method: 'POST',
-        mode: "no-cors",
+        
         headers: {
             "Authorization": token
         },
