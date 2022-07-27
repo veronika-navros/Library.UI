@@ -12,11 +12,10 @@ document.getElementById("addBookBtn").onclick = function(e) {
 
     fetch(baseUrl + '/api/book', {
         method: 'POST',
-        mode: 'no-cors',
-        body: formData,
         headers: {
             "Authorization": token
-        }
+        },
+        body: formData
     })
         .then(result => {
             fetchBooks();
